@@ -1,11 +1,9 @@
-import com.codeborne.selenide.Config;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selectors.byValue;
 import static com.codeborne.selenide.Selenide.*;
 
 public class SimpleTest {
@@ -20,7 +18,6 @@ public class SimpleTest {
     @Test
     void successfulSearchTest() {
 
-        open("https://github.com/");
         $("ul.d-lg-flex.list-style-none").$(byText("Solutions")).hover();
         $("[href='/enterprise']").click();
         $("#hero-section-brand-heading").shouldBe(visible);
